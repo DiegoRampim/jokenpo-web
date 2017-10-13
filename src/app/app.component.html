@@ -1,0 +1,47 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<div class="container" style="text-align: center;">
+  <div class="row" *ngIf="results === null">
+    <div class="col-4">
+      <button type="button" (click)="setPlayed('PAPER')" class="btn btn-default button-choose">
+        <img src="../assets/img/hand-paper.png">
+      </button>
+    </div>
+
+    <div class="col-4">
+      <button type="button" (click)="setPlayed('STONE')" class="btn btn-default button-choose">
+        <img src="../assets/img/hand-stone.png">
+      </button>
+    </div>
+
+    <div class="col-4">
+      <button type="button" (click)="setPlayed('SCISSORS')" class="btn btn-default button-choose">
+        <img src="../assets/img/hand-scissors.png">
+      </button>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 30px;" *ngIf="results === null">
+    <div class="col-12">
+      <button type="button" class="btn btn-lg btn-success" (click)="enviarBack()">
+        Enviar
+      </button>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="results !== null">
+    <div class="col-12">
+      <h1 *ngIf="results.draw === true">O jogo Empatou!</h1>
+      <h1 *ngIf="results.draw === false">O vencedor foi {{ results.winner.name }}</h1>
+
+      <button type="button" class="btn btn-lg btn-success" (click)="newGame()">
+        Novo Jogo
+      </button>
+    </div>
+  </div>
+
+
+</div>
+
+
